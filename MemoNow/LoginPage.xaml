@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="MemoNow.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MemoNow"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="密 码：" />
+                <PasswordBox Width="220"
+                             Margin="0,-5,0,0"
+                             x:Name="Login_PasswordBox"
+                             PlaceholderText="请输入您的密码"/>
+            </StackPanel>
+            <Button HorizontalAlignment="Center"
+                    x:Name="Login_Button"
+                    
+                    Content="登录"
+                    Margin="0,20,0,0"
+                    Click="Login_Button_Click" />
+        </StackPanel>
+        <HyperlinkButton  VerticalAlignment="Bottom"
+                          Content="设置密码"
+                          HorizontalAlignment="Center"
+                          Foreground="DarkGray"
+                          FontSize="17"
+                          Click="HyperlinkButton_Click"
+                          Margin="0,0,0,15"/>
+        <ContentDialog Margin="0,0,0,0"
+                       VerticalAlignment="Center"
+                       Title="提示"
+                       x:Name="MyContentDialog">
+            <StackPanel>
+                <TextBlock x:Name="cdtb" Text="正在登录" />
+                <ProgressRing IsActive="True"/>
+            </StackPanel>
+        </ContentDialog>
+    </Grid>
+</Page>
